@@ -1,23 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import { NavBar } from './components/navBar/navBar';
 
-function App() {
+export const App = () => {
+
+  const welcome =()=> alert ("Welcome to the store")
+  
   return (
+
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>Hola Mundo!</h1>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar />
+      <h1>Fede's Guitar Shop</h1>
+      <button onClick={welcome} >click</button>    
     </div>
   );
 }
 
-export default App;
+
