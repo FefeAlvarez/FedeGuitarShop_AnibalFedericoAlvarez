@@ -1,0 +1,12 @@
+.listItem {
+  width: 500px;
+  list-style-type: none;
+  background-color: grey;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.liContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 30px;
+}
