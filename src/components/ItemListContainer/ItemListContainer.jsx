@@ -1,25 +1,25 @@
 import styles from "./ItemListContainer.module.css";
-import { ItemCount } from "../ItemCount/ItemCount.jsx";
+
 import { ItemList } from "../ItemList/ItemList";
 import { useEffect, useState } from "react";
 
 export const ItemListContainer = ({ greeting }) => {
-  const [characters, setCharacters] = useState([]);
+  const [products, setProducts] = useState([]);
 
-  const getCharacters = async () => {
-    const response = await fetch("https://rickandmortyapi.com/api/character");
+  const getProducts = async () => {
+    const response = await fetch("https://fakestoreapi.com/products");
     const data = await response.json();
-
-    setCharacters(data.results);
+    console.log("soy la data del fetch", data);
+    setProducts(data);
   };
   useEffect(() => {
-    getCharacters();
+    getProducts();
   }, []);
   return (
-    <div>
+    <div className={styles.container}>
       <h1 className={styles.title}>{greeting}</h1>
-      <ItemCount stock={20} initial={1} />
-      <ItemList products={characters} />
+
+      <ItemList products={products} />
     </div>
   );
 };

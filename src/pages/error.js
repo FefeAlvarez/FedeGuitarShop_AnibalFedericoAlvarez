@@ -1,3 +1,3 @@
 export const Error = () => {
-  return <h1>NO EXISTE</h1>;
+  return <h1> ERROR: ESTA PAGINA NO EXISTE</h1>;
 };

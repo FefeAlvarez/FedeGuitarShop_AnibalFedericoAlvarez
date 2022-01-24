@@ -1,19 +1,48 @@
 import React from "react";
+import { Link, NavLink } from "react-router-dom";
 import { CartWidget } from "../CartWidget/CartWidget";
-import "./NavBar.css";
+import styles from "./NavBar.module.css";
 
 export const NavBar = () => {
   return (
-    <nav className="navbar">
-      <h3>Fede's Guitar Shop</h3>
-      <ul className="listaMenu">
-        <li>Home</li>
-        <li>About us</li>
-        <li>Guitars</li>
-        <li>Accesories</li>
-        <li>Contact Us</li>
+    <nav className={styles.navbar}>
+      <Link to="/">
+        <h3>Fede's Guitar Shop</h3>
+      </Link>
+      <ul className={styles.listaMenu}>
+        <li>
+          <NavLink
+            exact
+            className={styles.link}
+            activeClassName={styles.activeLink}
+            to="/"
+          >
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            className={styles.link}
+            activeClassName={styles.activeLink}
+            to="/products"
+          >
+            Catalog
+          </NavLink>
+        </li>
+
+        <li>
+          <NavLink
+            className={styles.link}
+            activeClassName={styles.activeLink}
+            to="/cart"
+          >
+            Cart
+          </NavLink>
+        </li>
       </ul>
-      <CartWidget />
+      <Link to="/cart">
+        <CartWidget />
+      </Link>
     </nav>
   );
 };

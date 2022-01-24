@@ -6,12 +6,10 @@
   padding: 15px 30px;
 }
 
-.title {
-  color: whitesmoke;
-}
 .amountCounter {
   background-color: aqua;
   padding: 5px;
+  margin: 5px;
 }
 .buttonContainer {
   display: flex;

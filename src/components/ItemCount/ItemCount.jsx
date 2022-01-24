@@ -26,13 +26,12 @@ export const ItemCount = ({ initial, stock }) => {
 
   return (
     <div className={styles.counterDiv}>
-      <h1 className={styles.title}>Soy el contador</h1>
-      <h2 className={styles.amountCounter}>Cantidad: {count} </h2>
       <div className={styles.buttonContainer}>
         <button className={styles.buttons} onClick={onDecrease}>
           -
         </button>
 
+        <p className={styles.amountCounter}>Cantidad: {count} </p>
         <button className={styles.buttons} onClick={onIncrease}>
           +
         </button>

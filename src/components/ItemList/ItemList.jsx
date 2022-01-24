@@ -1,21 +1,27 @@
 import { Item } from "../Item/Item";
 import styles from "./ItemList.module.css";
 export const ItemList = ({ products }) => {
-  console.log("estoy en IL", products);
-  const characterList = products;
+  console.log("hola", products.length);
+
   return (
     <div>
-      <h1>Item List</h1>
       <div className={styles.liContainer}>
-        {characterList.map((char) => (
-          <li className={styles.listItem} key={char.id}>
-            <Item
-              name={char.name}
-              image={char.image}
-              location={char.location.name}
-            />
-          </li>
-        ))}
+        {products.length > 0 ? (
+          products.map((product) => (
+            <div className={styles.listItem} key={product.id}>
+              <Item
+                id={product.id}
+                title={product.title}
+                image={product.image}
+                category={product.category}
+              />
+            </div>
+          ))
+        ) : (
+          <div className={styles.msgContainer}>
+            <p className={styles.waitingMsg}>loading...</p>
+          </div>
+        )}
       </div>
     </div>
   );

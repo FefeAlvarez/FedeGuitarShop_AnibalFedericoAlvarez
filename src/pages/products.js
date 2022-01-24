@@ -1,3 +1,9 @@
+import { ItemListContainer } from "../components/ItemListContainer/ItemListContainer";
+
 export const Products = () => {
-  return <h1>PRODUCTS</h1>;
+  return (
+    <>
+      <ItemListContainer greeting={"Catalogo"} />
+    </>
+  );
 };

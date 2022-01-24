@@ -1,3 +1,7 @@
 .App {
   text-align: center;
 }
+.appTitle {
+  font-size: 3em;
+  text-align: center;
+}

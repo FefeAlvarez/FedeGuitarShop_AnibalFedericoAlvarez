@@ -10,3 +10,10 @@
   flex-wrap: wrap;
   gap: 30px;
 }
+.msgContainer {
+  width: 100%;
+}
+.waitingMsg {
+  text-align: center;
+  color: blueviolet;
+}
