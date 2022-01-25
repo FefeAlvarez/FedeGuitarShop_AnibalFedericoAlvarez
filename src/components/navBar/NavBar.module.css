@@ -1,6 +1,9 @@
 .navbar {
   display: flex;
   justify-content: space-between;
+  background-color: rgba(137, 43, 226, 0.493);
+
+  width: 100%;
 }
 
 .listaMenu {
