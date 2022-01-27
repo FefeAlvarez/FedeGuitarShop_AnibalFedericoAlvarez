@@ -1,19 +1,26 @@
-.listItem {
-  width: 500px;
-  list-style-type: none;
-  background-color: grey;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+.itemList {
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 1em;
+	justify-content: center;
+	margin: 0 auto;
 }
-.liContainer {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 30px;
+
+.message {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	flex: 1;
+	gap: 1em;
+	justify-content: center;
+	padding: 4em 0;
+	width: 100%;
 }
-.msgContainer {
-  width: 100%;
-}
-.waitingMsg {
-  text-align: center;
-  color: blueviolet;
+.messageText {
+	color: var(--orange);
+	font-size: 2em;
+	font-weight: bold;
+	text-align: center;
 }

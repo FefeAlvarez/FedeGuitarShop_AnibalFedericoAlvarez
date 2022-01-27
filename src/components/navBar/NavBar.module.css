@@ -1,23 +1,43 @@
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  background-color: rgba(137, 43, 226, 0.493);
-
-  width: 100%;
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	padding: 1em;
+	width: 100%;
 }
 
-.listaMenu {
-  display: flex;
+.logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 12px;
+	text-decoration: none;
 }
 
-.listaMenu li {
-  list-style-type: none;
-}
-.link {
-  padding: 1em;
+.logoIcon {
+	height: 24px;
 }
 
-.activeLink {
-  color: whitesmoke;
-  background-color: black;
+.logoText {
+	color: var(--black);
+	font-weight: bold;
+	margin: 0;
+}
+
+.categories {
+	align-items: center;
+	display: flex;
+	gap: 1em;
+	justify-content: center;
+}
+
+.category {
+	color: var(--black);
+	opacity: 0.4;
+}
+
+.activeCategory {
+	color: var(--orange);
+	font-weight: bold;
+	opacity: 1;
 }
