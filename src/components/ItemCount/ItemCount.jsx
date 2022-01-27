@@ -2,7 +2,7 @@ import styles from "./ItemCount.module.css";
 
 import { useState } from "react";
 
-export const ItemCount = ({ initial, stock }) => {
+export const ItemCount = ({ initial, stock, onAdd }) => {
   const [count, setCount] = useState(initial);
 
   const onDecrease = () => {
@@ -19,10 +19,10 @@ export const ItemCount = ({ initial, stock }) => {
     }
   };
 
-  const onAdd = () => {
+  /* const onAdd = () => {
     const alertmsg = `Felicidades! Agregaste al carrito: ${count} producto`;
     count > initial ? alert(`${alertmsg}s`) : alert(alertmsg);
-  };
+  }; */
 
   return (
     <div className={styles.counterDiv}>
@@ -36,7 +36,7 @@ export const ItemCount = ({ initial, stock }) => {
           +
         </button>
       </div>
-      <button className={styles.addButton} onClick={onAdd}>
+      <button className={styles.addButton} onClick={onAdd} value={count}>
         Agregar al carrito
       </button>
     </div>
