@@ -1,5 +1,9 @@
 .cartWidgetStyles {
-  background-color: blueviolet;
-  padding: 1em;
-  border-radius: 50%;
+	background-color: blueviolet;
+	padding: 1em;
+	border-radius: 50%;
 }
+
+/* .badge {
+	height: 24px;
+} */

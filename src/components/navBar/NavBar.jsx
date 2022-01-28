@@ -1,48 +1,45 @@
-import React from "react";
-import { Link, NavLink } from "react-router-dom";
-import { CartWidget } from "../CartWidget/CartWidget";
-import styles from "./NavBar.module.css";
+import React from 'react'
+import { Link, NavLink } from 'react-router-dom'
+import { CartWidget } from '../CartWidget/CartWidget'
+import styles from './NavBar.module.css'
+import guitar from '../../assests/guitar.png'
 
 export const NavBar = () => {
-  return (
-    <nav className={styles.navbar}>
-      <Link to="/">
-        <h3>Fede's Guitar Shop</h3>
-      </Link>
-      <ul className={styles.listaMenu}>
-        <li>
-          <NavLink
-            exact
-            className={styles.link}
-            activeClassName={styles.activeLink}
-            to="/"
-          >
-            Home
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            className={styles.link}
-            activeClassName={styles.activeLink}
-            to="/products"
-          >
-            Catalog
-          </NavLink>
-        </li>
+	return (
+		<header className={styles.navbar}>
+			<Link to='/' className={styles.logo}>
+				<img className={styles.logoIcon} src={guitar} alt='guitar icon' />
+				<p className={styles.logoText}>Fede's Guitar</p>
+			</Link>
+			<nav className={styles.categories}>
+				<NavLink
+					exact
+					className={styles.category}
+					activeClassName={styles.activeCategory}
+					to='/'
+				>
+					Home
+				</NavLink>
+				<NavLink
+					className={styles.category}
+					activeClassName={styles.activeCategory}
+					to='/products'
+				>
+					Catalog
+				</NavLink>
 
-        <li>
-          <NavLink
-            className={styles.link}
-            activeClassName={styles.activeLink}
-            to="/cart"
-          >
-            Cart
-          </NavLink>
-        </li>
-      </ul>
-      <Link to="/cart">
-        <CartWidget />
-      </Link>
-    </nav>
-  );
-};
+				<NavLink
+					className={styles.category}
+					activeClassName={styles.activeCategory}
+					to='/cart'
+				>
+					Cart
+				</NavLink>
+			</nav>
+
+			<Link to='/cart'>
+				<CartWidget />
+			</Link>
+		</header>
+	)
+}
