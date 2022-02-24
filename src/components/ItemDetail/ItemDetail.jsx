@@ -1,42 +1,70 @@
-import styles from "./ItemDetail.module.css";
+import { styles } from "./ItemDetail.styles";
 import { ItemCount } from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { CartContext } from "../../contexts/cartContext";
+import { Button, Card, Space, Tag, Typography } from "@douyinfe/semi-ui";
+import { IconPriceTag } from "@douyinfe/semi-icons";
+import Meta from "@douyinfe/semi-ui/lib/es/card/meta";
+import Paragraph from "@douyinfe/semi-ui/lib/es/typography/paragraph";
 
 export const ItemDetail = ({ item }) => {
+  const { Title } = Typography;
+  const { addToCart } = useContext(CartContext);
   const [showComponent, setShowComponent] = useState(true);
-  const [chosenItem, setChosenItem] = useState();
-  const addItem = (e) => {
-    setChosenItem(e.target.value);
+  const [quantity, setQuantity] = useState(0);
+
+  const onAdd = (e) => {
     setShowComponent(false);
+    setQuantity(e.target.value);
+    let quantity = parseInt(e.target.value);
+    addToCart(item, quantity);
   };
-  console.log("cantidad del producto", chosenItem);
+
+  const alertmsg = `Congrats! You added to the cart: ${quantity} product`;
 
   return (
-    <div className={styles.container}>
-      <div className={styles.imageContainer}>
-        <img className={styles.image} src={item.image} alt={item.title} />
-        <h1 className={styles.title}>Product: {item.title}</h1>
-        <p>{item.description}</p>
-      </div>
-      <div className={styles.countContainer}>
-        <Link to={`/category/${item.category}`}>
-          <p>{item.category}</p>
-        </Link>
-        <p className={styles.priceTxt}>Precio: USD {item.price}</p>
-        {showComponent ? (
-          <ItemCount initial={1} stock={10} onAdd={addItem} />
-        ) : (
-          <div>
-            <p>
-              Adquiriste exitosamente {chosenItem} unidades de {item.title}
-            </p>
-            <Link to="/cart">Ir al carrito</Link>
-          </div>
-        )}
+    <div style={styles.container}>
+      <Card shadows="hover">
+        <Space>
+          <Space>
+            <img style={styles.image} src={item.image} alt={item.title} />
+          </Space>
+          <Space vertical>
+            <Meta title={item.title} />
+            <Title heading={3} style={styles.priceTitle}>
+              <IconPriceTag /> USD {item.price}
+            </Title>
+            <Paragraph>{item.description}</Paragraph>
+            <Link to="/products" style={styles.link}>
+              <Button style={styles.button}>Back to catalog</Button>
+            </Link>
+          </Space>
+          <Space vertical>
+            <div style={styles.countContainer}>
+              <Link to={`/category/${item.category}`}>
+                <Tag color="orange" type="ghost">
+                  {item.category}
+                </Tag>
+              </Link>
 
-        <Link to="/products">Volver al catálogo</Link>
-      </div>
+              {showComponent ? (
+                <ItemCount initial={1} stock={item.stock} onAdd={onAdd} />
+              ) : (
+                <div>
+                  <p style={styles.paragraph}>
+                    {quantity > 1 ? `${alertmsg}s` : `${alertmsg}`}
+                  </p>
+
+                  <Link to="/cart" style={styles.link}>
+                    Go to Cart
+                  </Link>
+                </div>
+              )}
+            </div>
+          </Space>
+        </Space>
+      </Card>
     </div>
   );
 };

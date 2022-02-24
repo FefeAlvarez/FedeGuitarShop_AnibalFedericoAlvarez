@@ -1,12 +1,12 @@
 .itemListContainer {
-	align-items: center;
-	display: flex;
-	flex-direction: column;
-	flex: 1;
-	padding: 1em;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1em;
 }
 
 .title {
-	color: var(--black);
-	padding: 1em;
+  color: var(--black);
+  padding: 1em;
 }

@@ -1,24 +1,31 @@
-import styles from './ItemListContainer.module.css'
-
-import { ItemList } from '../ItemList/ItemList'
-import { useEffect, useState } from 'react'
+import styles from "./ItemListContainer.module.css";
+import { ItemList } from "../ItemList/ItemList";
+import { useEffect, useState } from "react";
+import { getDocs, collection } from "firebase/firestore";
+import { db } from "../../firebase/firebase";
 
 export const ItemListContainer = ({ greeting }) => {
-	const [products, setProducts] = useState([])
+  const [items, setItems] = useState([]);
 
-	const getProducts = async () => {
-		const response = await fetch('https://fakestoreapi.com/products')
-		const data = await response.json()
-		console.log('soy la data del fetch', data)
-		setProducts(data)
-	}
-	useEffect(() => {
-		getProducts()
-	}, [])
-	return (
-		<div className={styles.itemListContainer}>
-			<h1 className={styles.title}>{greeting}</h1>
-			<ItemList products={products} />
-		</div>
-	)
-}
+  useEffect(() => {
+    const getItems = async () => {
+      const querySnapshot = await getDocs(collection(db, "items"));
+      const products = querySnapshot.docs.map((item) => ({
+        id: item.id,
+        ...item.data(),
+      }));
+      setItems(products);
+    };
+    try {
+      getItems();
+    } catch (error) {
+      console.log("we have this error: ", error);
+    }
+  }, []);
+  return (
+    <div className={styles.itemListContainer}>
+      <h1 className={styles.title}>{greeting}</h1>
+      <ItemList items={items} />
+    </div>
+  );
+};
