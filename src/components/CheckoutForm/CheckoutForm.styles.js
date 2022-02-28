@@ -13,6 +13,7 @@ const formContainer = {
   padding: "2em",
   borderRadius: 10,
   margin: "2em",
+  boxShadow: "rgba(0, 0, 0, 0.25) 0px 25px 50px -12px",
 };
 const formInput = {
   display: "flex",

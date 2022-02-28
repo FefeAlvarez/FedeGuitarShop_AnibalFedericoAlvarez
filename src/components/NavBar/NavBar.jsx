@@ -1,7 +1,8 @@
-import { Link, NavLink } from "react-router-dom";
-import { CartWidget } from "../CartWidget/CartWidget";
 import styles from "./NavBar.module.css";
 import guitar from "../../assets/guitar.png";
+import { semiStyles } from "./NavBar.styles";
+import { Link, NavLink } from "react-router-dom";
+import { CartWidget } from "../CartWidget/CartWidget";
 import { CartContext } from "../../contexts/cartContext";
 import { useContext } from "react";
 import { Dropdown } from "@douyinfe/semi-ui";
@@ -31,11 +32,27 @@ export const NavBar = () => {
         >
           <Dropdown
             render={
-              <Dropdown.Menu>
-                <Dropdown.Item>Electric guitars</Dropdown.Item>
-                <Dropdown.Item>Acoustic guitars</Dropdown.Item>
-                <Dropdown.Item>Basses</Dropdown.Item>
-                <Dropdown.Item>Amplifiers</Dropdown.Item>
+              <Dropdown.Menu style={semiStyles.dropdown}>
+                <Dropdown.Item>
+                  <Link to="/category/electric guitars" style={semiStyles.link}>
+                    Electric guitars
+                  </Link>{" "}
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <Link to="/category/acoustic guitars" style={semiStyles.link}>
+                    Acoustic guitars
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <Link to="/category/bass" style={semiStyles.link}>
+                    Basses
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <Link to="/category/amplifiers" style={semiStyles.link}>
+                    Amplifiers
+                  </Link>
+                </Dropdown.Item>
               </Dropdown.Menu>
             }
           >

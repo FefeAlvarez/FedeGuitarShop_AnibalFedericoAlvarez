@@ -12,8 +12,16 @@ const buttonCheckout = {
   margin: 5,
   border: `2px ${colors.orange} solid`,
 };
-const empty = {
-  width: "100%",
+const emptyContainer = {
+  minHeight: "70vh",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  flexDirection: "column",
+};
+const emptyIlustration = {
+  width: 150,
+  height: 150,
 };
 const icon = {
   color: colors.orange,
@@ -36,7 +44,8 @@ const paragraph = {
 export const styles = {
   button,
   buttonCheckout,
-  empty,
+  emptyContainer,
+  emptyIlustration,
   icon,
   link,
   linkCheckout,

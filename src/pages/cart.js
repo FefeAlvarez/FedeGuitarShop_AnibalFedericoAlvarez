@@ -2,7 +2,7 @@ import { styles } from "./pageStyles/cart.styles.js";
 import { Link } from "react-router-dom";
 import { Fragment, useContext } from "react";
 import { CartContext } from "../contexts/cartContext";
-import { ItemCart } from "../components/itemCart/ItemCart.jsx";
+import { ItemCart } from "../components/ItemCart/ItemCart.jsx";
 import {
   CardGroup,
   Button,
@@ -35,18 +35,15 @@ export const Cart = () => {
       <h1>CART</h1>
       <div className="cartContainer">
         {totalProducts === 0 ? (
-          <Fragment>
+          <div style={styles.emptyContainer}>
             <Empty
-              image={
-                <IllustrationNoContent style={{ width: 150, height: 150 }} />
-              }
-              style={styles.empty}
+              image={<IllustrationNoContent style={styles.emptyIlustration} />}
               description={"The cart is empty, go back to the store"}
             />
             <Link to="/products" style={styles.link}>
               <Button style={styles.button}>Back to store</Button>
             </Link>
-          </Fragment>
+          </div>
         ) : (
           <Fragment>
             <Row>
