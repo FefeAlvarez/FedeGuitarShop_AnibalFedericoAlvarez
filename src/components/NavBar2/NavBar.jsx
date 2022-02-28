@@ -4,6 +4,7 @@ import styles from "./NavBar.module.css";
 import guitar from "../../assets/guitar.png";
 import { CartContext } from "../../contexts/cartContext";
 import { useContext } from "react";
+import { Dropdown } from "@douyinfe/semi-ui";
 
 export const NavBar = () => {
   const { totalProducts } = useContext(CartContext);
@@ -28,7 +29,18 @@ export const NavBar = () => {
           activeClassName={styles.activeCategory}
           to="/products"
         >
-          Catalog
+          <Dropdown
+            render={
+              <Dropdown.Menu>
+                <Dropdown.Item>Electric guitars</Dropdown.Item>
+                <Dropdown.Item>Acoustic guitars</Dropdown.Item>
+                <Dropdown.Item>Basses</Dropdown.Item>
+                <Dropdown.Item>Amplifiers</Dropdown.Item>
+              </Dropdown.Menu>
+            }
+          >
+            Catalog
+          </Dropdown>
         </NavLink>
 
         <NavLink

@@ -1,16 +1,20 @@
-import { useState, useContext } from "react";
+import { styles } from "./pageStyles/checkout.styles";
+import { useState, useContext, useEffect } from "react";
 import { CartContext } from "../contexts/cartContext";
 import { db } from "../firebase/firebase";
 import { addDoc, collection } from "firebase/firestore";
-import { useEffect } from "react";
-import { styles } from "./pageStyles/checkout.styles";
-import { IconTick } from "@douyinfe/semi-icons";
+import { Button } from "@douyinfe/semi-ui";
+import { Link } from "react-router-dom";
+import { LoadingSpin } from "../components/LoadingSpin/LoadingSpin";
+import { CheckoutCard } from "../components/CheckoutCard/CheckoutCard";
+import { CheckoutForm } from "../components/CheckoutForm/CheckoutForm";
 
 export const Checkout = () => {
   const { totalPrice, cart, cleanCart } = useContext(CartContext);
 
   const [buyer, setBuyer] = useState({
     name: "",
+    surname: "",
     phone: "",
     email: "",
   });
@@ -44,81 +48,38 @@ export const Checkout = () => {
   };
 
   useEffect(() => {
-    const newDisableButton = [buyer.name, buyer.phone, buyer.email].includes(
-      ""
-    );
+    const newDisableButton = [
+      buyer.name,
+      buyer.surname,
+      buyer.phone,
+      buyer.email,
+    ].includes("");
     setIsDisabled(newDisableButton);
   }, [buyer]);
   return showComponent ? (
     <section>
-      <h1>Buyer Data</h1>
-      <div style={styles.formContainer}>
-        <label htmlFor="">
-          Name:
-          <br />
-          <input
-            name="name"
-            type="text"
-            value={buyer.name}
-            onChange={handleOnChange}
-          />
-        </label>
-        <label htmlFor="">
-          Phone:
-          <br />
-          <input
-            name="phone"
-            type="number"
-            value={buyer.phone}
-            onChange={handleOnChange}
-          />
-        </label>
-        <label htmlFor="">
-          e-Mail:
-          <br />
-          <input
-            name="email"
-            type="text"
-            value={buyer.email}
-            onChange={handleOnChange}
-          />
-        </label>
-
-        <button
-          type="submit"
-          disabled={isDisabled}
-          onClick={() => generateOrder(buyer, totalPrice)}
-          style={styles.buttonFinish}
-        >
-          Click to finish <br />
-          <IconTick />
-        </button>
-      </div>
+      <CheckoutForm
+        buyer={buyer}
+        handleOnChange={handleOnChange}
+        isDisabled={isDisabled}
+        generateOrder={generateOrder}
+        totalPrice={totalPrice}
+      />
     </section>
-  ) : (
+  ) : orderId ? (
     <div style={styles.cardContainer}>
-      <div style={styles.card}>
-        <div style={styles.checkoutPhraseContainer}>
-          <p>
-            <IconTick style={styles.icon} />
-            {buyer.name} you've successfully buyed in our store!
-          </p>
-        </div>
-        <br />
-        <br />
-        <div style={styles.checkoutPhraseContainer}>
-          <p>
-            Your order ID is "<b>{orderId}</b>", you'll be contacted soon.
-          </p>
-        </div>
-        <br />
-        <br />
-        <div style={styles.checkoutPhraseContainer}>
-          <p>
-            Thanks for buying in <b> Fede's Guitars</b>!
-          </p>
-        </div>
-      </div>
+      <CheckoutCard
+        buyerName={buyer.name}
+        buyerSurname={buyer.surname}
+        orderId={orderId}
+      />
+      <Button style={styles.button}>
+        <Link to="/products" style={styles.link}>
+          Back to full catalog
+        </Link>
+      </Button>
     </div>
+  ) : (
+    <LoadingSpin />
   );
 };

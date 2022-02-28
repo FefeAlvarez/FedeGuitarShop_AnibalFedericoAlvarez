@@ -4,7 +4,7 @@ import { styles } from "./pageStyles/home.styles";
 
 export const Home = () => {
   const [buttonChange, setButtonChange] = useState(true);
-  const handleMouseOver = () => {
+  const handleMouseEvent = () => {
     setButtonChange(!buttonChange);
   };
 
@@ -13,7 +13,8 @@ export const Home = () => {
       <h1 style={styles.homeTitle}>Welcome to the best guitars' store!</h1>
       <Link
         to="/products"
-        onMouseOver={handleMouseOver}
+        onMouseEnter={handleMouseEvent}
+        onMouseLeave={handleMouseEvent}
         style={buttonChange ? styles.mainButton : styles.mouseHover}
       >
         Enter the store

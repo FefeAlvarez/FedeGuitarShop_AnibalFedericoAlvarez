@@ -1,42 +1,27 @@
 import { colors } from "../../globals.styles";
 
-const buttonFinish = {
-  backgroundColor: colors.white,
-  color: colors.orangeDark,
+const button = {
+  textDecoration: "none",
+  color: colors.orange,
   padding: "2em",
   margin: 5,
-  border: `2px ${colors.orange} solid`,
 };
 
-const card = {
-  border: `2px ${colors.orange} solid`,
-  borderRadius: "1em",
-  padding: "1em",
-};
 const cardContainer = {
   height: "80vh",
   display: "flex",
+  flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
 };
 
-const checkoutPhraseContainer = {};
+const link = {
+  textDecoration: "none",
+  color: colors.orange,
+};
 
-const formContainer = {
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "start",
-  justifyContent: "end",
-};
-const icon = {
-  color: "green",
-  margin: "5px",
-};
 export const styles = {
-  buttonFinish,
-  card,
+  button,
   cardContainer,
-  checkoutPhraseContainer,
-  formContainer,
-  icon,
+  link,
 };

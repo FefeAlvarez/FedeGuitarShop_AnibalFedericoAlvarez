@@ -42,7 +42,9 @@ export const Category = () => {
           `${categoryID}`,
         ]}
       />
-      <h1>Same Category</h1>
+      <h1 style={styles.title}>
+        <b>{categoryID}</b>
+      </h1>
       {categories.map((cat, i) => (
         <div key={i}>
           <Item

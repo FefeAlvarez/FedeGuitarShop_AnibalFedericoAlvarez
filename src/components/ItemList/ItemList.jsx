@@ -1,6 +1,6 @@
 import { Item } from "../Item/Item";
-import { Spin } from "@douyinfe/semi-ui";
 import styles from "./ItemList.module.css";
+import { LoadingSpin } from "../LoadingSpin/LoadingSpin";
 
 export const ItemList = ({ items }) => {
   return (
@@ -16,10 +16,7 @@ export const ItemList = ({ items }) => {
           />
         ))
       ) : (
-        <div className={styles.message}>
-          <Spin size="large" />
-          <p className={styles.messageText}>Loading...</p>
-        </div>
+        <LoadingSpin />
       )}
     </div>
   );
