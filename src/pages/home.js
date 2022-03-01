@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { styles } from "./pageStyles/home.styles";
+import { ItemListContainer } from "../components/ItemListContainer/ItemListContainer";
+import { Pagination } from "@douyinfe/semi-ui";
 
 export const Home = () => {
   const [buttonChange, setButtonChange] = useState(true);

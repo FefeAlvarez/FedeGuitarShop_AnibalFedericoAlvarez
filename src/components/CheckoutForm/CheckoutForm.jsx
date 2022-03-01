@@ -21,6 +21,7 @@ export const CheckoutForm = ({
             value={buyer.name}
             onChange={handleOnChange}
             style={styles.input}
+            placeholder="write your name"
           />
         </label>
         <label>
@@ -32,6 +33,7 @@ export const CheckoutForm = ({
             value={buyer.surname}
             onChange={handleOnChange}
             style={styles.input}
+            placeholder="write your surname"
           />
         </label>
         <label>
@@ -43,6 +45,7 @@ export const CheckoutForm = ({
             value={buyer.phone}
             onChange={handleOnChange}
             style={styles.input}
+            placeholder="1100220033"
           />
         </label>
         <label>
@@ -54,6 +57,7 @@ export const CheckoutForm = ({
             value={buyer.email}
             onChange={handleOnChange}
             style={styles.input}
+            placeholder="abc@email.com"
           />
         </label>
 
@@ -61,7 +65,7 @@ export const CheckoutForm = ({
           type="submit"
           disabled={isDisabled}
           onClick={() => generateOrder(buyer, totalPrice)}
-          style={styles.buttonFinish}
+          style={isDisabled ? styles.buttonFinishDisabled : styles.buttonFinish}
         >
           Click to finish <br />
           <IconTick />

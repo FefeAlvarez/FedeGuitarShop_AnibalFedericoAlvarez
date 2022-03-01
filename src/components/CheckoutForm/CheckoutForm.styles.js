@@ -8,6 +8,16 @@ const buttonFinish = {
   border: `2px ${colors.orange} solid`,
   borderRadius: 10,
 };
+
+const buttonFinishDisabled = {
+  opacity: "0.5",
+  backgroundColor: colors.white,
+  color: "grey",
+  padding: "2em",
+  margin: 5,
+  border: `2px grey solid`,
+  borderRadius: 10,
+};
 const formContainer = {
   border: `2px ${colors.orange} solid`,
   padding: "2em",
@@ -34,6 +44,7 @@ const title = {
 };
 export const styles = {
   buttonFinish,
+  buttonFinishDisabled,
   formContainer,
   formInput,
   input,
