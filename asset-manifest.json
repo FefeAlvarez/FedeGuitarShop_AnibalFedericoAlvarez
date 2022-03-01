@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/FedeGuitarShop_AnibalFedericoAlvarez/static/css/main.0e0917e6.css",
+    "main.js": "/FedeGuitarShop_AnibalFedericoAlvarez/static/js/main.127e41ab.js",
+    "static/media/landing+page.jpg": "/FedeGuitarShop_AnibalFedericoAlvarez/static/media/landing+page.9ab2f6a1bd73c313af4d.jpg",
+    "index.html": "/FedeGuitarShop_AnibalFedericoAlvarez/index.html",
+    "main.0e0917e6.css.map": "/FedeGuitarShop_AnibalFedericoAlvarez/static/css/main.0e0917e6.css.map",
+    "main.127e41ab.js.map": "/FedeGuitarShop_AnibalFedericoAlvarez/static/js/main.127e41ab.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0e0917e6.css",
+    "static/js/main.127e41ab.js"
+  ]
+}
