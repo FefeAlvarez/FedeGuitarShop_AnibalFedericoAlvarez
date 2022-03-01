@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/FedeGuitarShop_AnibalFedericoAlvarez/static/css/main.0e0917e6.css",
-    "main.js": "/FedeGuitarShop_AnibalFedericoAlvarez/static/js/main.127e41ab.js",
-    "static/media/landing+page.jpg": "/FedeGuitarShop_AnibalFedericoAlvarez/static/media/landing+page.9ab2f6a1bd73c313af4d.jpg",
-    "index.html": "/FedeGuitarShop_AnibalFedericoAlvarez/index.html",
-    "main.0e0917e6.css.map": "/FedeGuitarShop_AnibalFedericoAlvarez/static/css/main.0e0917e6.css.map",
-    "main.127e41ab.js.map": "/FedeGuitarShop_AnibalFedericoAlvarez/static/js/main.127e41ab.js.map"
+    "main.css": "/fedeguitarshop_anibalfedericoalvarez/static/css/main.0e0917e6.css",
+    "main.js": "/fedeguitarshop_anibalfedericoalvarez/static/js/main.b2974f28.js",
+    "static/media/landing+page.jpg": "/fedeguitarshop_anibalfedericoalvarez/static/media/landing+page.9ab2f6a1bd73c313af4d.jpg",
+    "index.html": "/fedeguitarshop_anibalfedericoalvarez/index.html",
+    "main.0e0917e6.css.map": "/fedeguitarshop_anibalfedericoalvarez/static/css/main.0e0917e6.css.map",
+    "main.b2974f28.js.map": "/fedeguitarshop_anibalfedericoalvarez/static/js/main.b2974f28.js.map"
   },
   "entrypoints": [
     "static/css/main.0e0917e6.css",
-    "static/js/main.127e41ab.js"
+    "static/js/main.b2974f28.js"
   ]
 }
