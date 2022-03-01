@@ -44,7 +44,8 @@ export const Checkout = () => {
   };
 
   const handleOnChange = (event) => {
-    setBuyer({ ...buyer, [event.target.name]: event.target.value });
+    const { name, value } = event.target;
+    setBuyer({ ...buyer, [name]: value });
   };
 
   useEffect(() => {
